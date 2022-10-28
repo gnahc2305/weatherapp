@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log('cacac')\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
+eval("const input = document.querySelector(\".input\");\nconst btn = document.querySelector(\".btn\");\n\nfunction getWeatherInfo(location) {\n  fetch(\n    `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=c4b056d22aca4491323fcab7b96db61c`,\n    { mode: \"cors\" }\n  )\n    .then(function (response) {\n      return response.json();\n    })\n    .then(function (response) {\n      let currentWeather = response.main.temp;\n      console.log(currentWeather);\n    })\n    .catch(function (err) {\n      console.log(\"Error \" + err);\n    });\n}\n\nbtn.addEventListener('click', () => {\n    getWeatherInfo(input.value)\n})\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
 
 /***/ })
 
