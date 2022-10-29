@@ -23,9 +23,14 @@ function getWeatherInfo(location) {
     });
 }
 
-btn.addEventListener("click", () => {
-  getWeatherInfo(input.value);
-});
+// btn.addEventListener("click", () => {
+// });
+
+input.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    getWeatherInfo(input.value);    
+  }
+})
 
 function formatData(data) {
   // data.slice(data.main.temp);
@@ -35,5 +40,5 @@ function formatData(data) {
 
   let weather = data.weather[0].main;
   let description = data.weather[0].description;
-  // console.log(temp, feelsLike, humidity, weather, description);
+  console.log(temp, feelsLike, humidity, weather, description);
 }
