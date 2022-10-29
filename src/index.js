@@ -45,7 +45,7 @@ function formatData(data) {
 
   let weather = data.weather[0].main;
   let description = data.weather[0].description;
-  console.log(temp, feelsLike, weather, description, country, city);
+  // console.log(temp, feelsLike, weather, description, country, city);
 
   weather_h.innerHTML = weather + `<p class="description">${description}</p>`;
   temp_h.textContent = temp + "°";

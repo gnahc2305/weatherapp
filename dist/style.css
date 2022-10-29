@@ -5,7 +5,7 @@ body, html {
 }
 
 .content {
-    /* background-image: url(../src/background/sunset.jpg); */
+    background-image: url(../src/background/cloudy.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,6 +20,18 @@ body, html {
     opacity: 0.7;
     /* text-align: center; */
     color: white;
+    text-align: center;
+}
+
+.input {
+    margin-top: 60px;
+    height: 35px;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 2px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
 }
 
 .info {
@@ -30,7 +42,7 @@ body, html {
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
-    top: 45%;
+    top:40%;
     -ms-transform: translateY(-50%);
     position: relative;
     transform: translateY(-50%);
