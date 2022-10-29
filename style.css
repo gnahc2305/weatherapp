@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    background-image: url(../src/sunset.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;;
+}
+
+.sidebar {
+    height: 100%;
+    width: 40%;
+    background-color: black;
+    opacity: 0.7;
+    text-align: center;
+}
