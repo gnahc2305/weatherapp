@@ -1,13 +1,16 @@
+import format from "date-fns/format";
+
+const content = document.querySelector(".content");
 const input = document.querySelector(".input");
-const place_h = document.querySelector(".place1");
+const place_h = document.querySelector(".place");
 const weather_h = document.querySelector(".weather");
-const description_h = document.querySelector(".description");
 const temp_h = document.querySelector(".temp");
 const feels_h = document.querySelector(".feels-like");
 const date_h = document.querySelector(".date");
+const img = document.querySelector(".img");
 
-const date = new Date()
-// const btn = document.querySelector(".btn");
+let day = format(new Date(), "'Today is a' eeee");
+date_h.textContent = day;
 
 function getWeatherInfo(location) {
   fetch(
@@ -16,23 +19,16 @@ function getWeatherInfo(location) {
   )
     .then(function (response) {
       return response.json();
-      // console.log(response.json());
     })
     .then(function (response) {
-      // return response
-      // let currentWeather = response.main.temp;
-      // return currentWeather;
-      // console.log(response);
-      // console.log(formatData(response));
       formatData(response);
     })
     .catch(function (err) {
       console.log("Error " + err);
+      alert("Enter a valid city");
     });
 }
 
-// btn.addEventListener("click", () => {
-// });
 
 input.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
@@ -41,19 +37,34 @@ input.addEventListener("keypress", (event) => {
 });
 
 function formatData(data) {
-  // data.slice(data.main.temp);
   let temp = data.main.temp;
   let feelsLike = data.main.feels_like;
-  // let humidity = data.main.humidity;
+
+  let country = data.sys.country;
+  let city = data.name;
 
   let weather = data.weather[0].main;
   let description = data.weather[0].description;
-  console.log(temp, feelsLike, weather, description);
+  console.log(temp, feelsLike, weather, description, country, city);
 
-  // place_h.textContent = input.value;
-  weather_h.textContent = weather;
-  description_h.textContent = weather;
-  temp_h.textContent = temp + '°';
-  feels_h.textContent = feelsLike + '°';
-  // date_h.textContent = date;  
+  weather_h.innerHTML = weather + `<p class="description">${description}</p>`;
+  temp_h.textContent = temp + "°";
+  feels_h.textContent = "Feels like: " + feelsLike + "°";
+  place_h.textContent = city + ", " + country;
+
+  if (weather === "Clouds") {
+    content.style.backgroundImage = "url(../src/background/cloudy.jpg)";
+    img.src = '../src/icons/cloud.png'
+  } else if (weather === "Rain") {
+    content.style.backgroundImage = "url(../src/background/rainy.jpg)";
+    img.src = '../src/icons/rain.png'
+  } else if (weather === "Sunny") {
+    content.style.backgroundImage = "url(../src/background/sunny.jpg)";
+    img.src = '../src/icons/sunny.png'
+  } else {
+    content.style.backgroundImage = "url(../src/background/sunset.jpg)";
+    img.src = '../src/icons/sunny.png'
+  }
 }
+
+getWeatherInfo("Boston");

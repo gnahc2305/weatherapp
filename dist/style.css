@@ -5,7 +5,7 @@ body, html {
 }
 
 .content {
-    background-image: url(../src/background/sunset.jpg);
+    /* background-image: url(../src/background/sunset.jpg); */
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@ body, html {
 
 .info {
     /* background-color: red; */
-    height: auto;
+    height: 60%;
     max-height: 70%;
     width: 70%;
     font-size: 20px;
@@ -55,4 +55,12 @@ body, html {
 
 .place {
     font-size: 18px;
+}
+
+.description {
+    font-size: 15px;
+}
+
+.date {
+    font-size: 20px;
 }
