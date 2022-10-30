@@ -53,17 +53,17 @@ function formatData(data) {
   place_h.textContent = city + ", " + country;
 
   if (weather === "Clouds") {
-    content.style.backgroundImage = "url(../src/background/cloudy.jpg)";
-    img.src = '../src/icons/cloud.png'
+    content.style.backgroundImage = "url(/src/background/cloudy.jpg)";
+    img.src = '/src/icons/cloud.png'
   } else if (weather === "Rain") {
-    content.style.backgroundImage = "url(../src/background/rainy.jpg)";
-    img.src = '../src/icons/rain.png'
+    content.style.backgroundImage = "url(/src/background/rainy.jpg)";
+    img.src = '/src/icons/rain.png'
   } else if (weather === "Sunny") {
-    content.style.backgroundImage = "url(../src/background/sunny.jpg)";
-    img.src = '../src/icons/sunny.png'
+    content.style.backgroundImage = "url(/src/background/sunny.jpg)";
+    img.src = '/src/icons/sunny.png'
   } else {
-    content.style.backgroundImage = "url(../src/background/sunset.jpg)";
-    img.src = '../src/icons/sunny.png'
+    content.style.backgroundImage = "url(/src/background/sunset.jpg)";
+    img.src = '/src/icons/sunny.png'
   }
 }
 
