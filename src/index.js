@@ -1,4 +1,11 @@
 import format from "date-fns/format";
+// import cloud_img from "./background/cloudy.jpg";
+// import rainy_img from "./background/rainy.jpg";
+// import sunny_img from "./background/sunny.jpg";
+// import sunset_img from "./background/sunset_img";
+
+// const cloud = new Image();
+// cloud.src = cloud_img;
 
 const content = document.querySelector(".content");
 const input = document.querySelector(".input");
@@ -29,7 +36,6 @@ function getWeatherInfo(location) {
     });
 }
 
-
 input.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     getWeatherInfo(input.value);
@@ -54,16 +60,16 @@ function formatData(data) {
 
   if (weather === "Clouds") {
     content.style.backgroundImage = "url(/src/background/cloudy.jpg)";
-    img.src = '/src/icons/cloud.png'
+    img.src = "/src/icons/cloud.png";
   } else if (weather === "Rain") {
     content.style.backgroundImage = "url(/src/background/rainy.jpg)";
-    img.src = '/src/icons/rain.png'
+    img.src = "/src/icons/rain.png";
   } else if (weather === "Sunny") {
     content.style.backgroundImage = "url(/src/background/sunny.jpg)";
-    img.src = '/src/icons/sunny.png'
+    img.src = "/src/icons/sunny.png";
   } else {
     content.style.backgroundImage = "url(/src/background/sunset.jpg)";
-    img.src = '/src/icons/sunny.png'
+    img.src = "/src/icons/sunny.png";
   }
 }
 
